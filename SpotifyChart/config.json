@@ -1,0 +1,11 @@
+{
+  "ConnectionStrings": {
+    "SpotifyConnectionString": "server=(localdb)\\ProjectsV13;Database=SpotifyDatabase;Integrated Security=true;MultipleActiveResultSets=true;Connection Timeout=30"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  }
+} 

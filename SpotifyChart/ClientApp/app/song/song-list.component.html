@@ -1,0 +1,63 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+            <div><h2>The top 50 songs on our chart are: </h2></div>
+    </div>
+    <div class='panel-body'>
+
+
+        <div class='table-responsive'>
+            <table class='table'>
+                <thead>
+                <tr>
+                    <th *ngFor="let column of columns" [appSort]="config" [column]="column" (sortChanged)="onChangeTable($event)">
+                        {{column.title | titlecase}}
+                        <i class="fa" [ngClass]="{'fa-angle-down': column.sort === 'desc', 'fa-angle-up': column.sort === 'asc'}"></i>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td *ngFor="let column of columns">
+                                <input *ngIf="column.filtering" placeholder="{{column.filtering.placeholder}}"
+                                [appFilter]="column.filtering"
+                                class="form-control"
+                                style="width: auto;"
+                                (tableChanged)="tableChanged(config)"/>
+                              </td>
+                            </tr>
+                <tr *ngFor='let song of pagedItems'>
+                    <td>
+                        {{ song.rank }}
+                    </td>
+                    <td>
+                        <a [routerLink]="['/detail', song?.name]">{{ song?.name }}</a>
+                    </td>
+                    <td>{{ song?.artist }}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div class="text-center">
+
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(1)">First</a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{active:pager.currentPage === page}">
+            <a class="page-link" (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+        </li>
+    </ul>
+</div>

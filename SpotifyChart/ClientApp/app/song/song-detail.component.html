@@ -1,0 +1,81 @@
+
+<div><h2>Song Details : {{song?.name}} at Rank {{song?.rank}}</h2></div>
+<div class="control-section">
+    <div id="container">
+            <div class="row">
+    
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-3">Name:</div>
+                            <div class="col-md-6">{{song?.name}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Artist:</div>
+                            <div class='col-md-6'>{{song?.artist}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Danceability:</div>
+                            <div class="col-md-6">{{song?.danceability}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Energy:</div>
+                            <div class="col-md-6">{{song?.energy}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Key:</div>
+                            <div class="col-md-6">{{song?.key}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Loudness:</div>
+                            <div class="col-md-6">{{song?.loudness}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Mode:</div>
+                            <div class="col-md-6">{{song?.mode}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">Speechiness:</div>
+                            <div class="col-md-6">{{song?.speechiness}}</div>
+                        </div>
+                        <div class="row">
+                                <div class="col-md-3">Acousticness:</div>
+                                <div class="col-md-6">{{song?.acousticness}}</div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-md-3">Instrumentalness:</div>
+                                    <div class="col-md-6">{{song?.instrumentalness}}</div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-3">Liveness:</div>
+                                        <div class="col-md-6">{{song?.liveness}}</div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-md-3">Valence:</div>
+                                            <div class="col-md-6">{{song?.valence}}</div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-3">Tempo:</div>
+                                                <div class="col-md-6">{{song?.tempo}}</div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-md-3">Valence:</div>
+                                                    <div class="col-md-6">{{song?.duration}}</div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-md-3">Valence:</div>
+                                                        <div class="col-md-6">{{song?.timeSignature}}</div>
+                                                    </div>
+
+                    </div>
+        
+                </div>
+    </div>
+</div>
+<div class='panel-footer'>
+    <button class='btn btn-success' (click)='onBack()' style='width:80px'>
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+    </button>
+</div>
+    
+            
+    

@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <base href="/">
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="container">
+
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+            <h1 class="navbar-brand">
+                Welcome to Spotify Charts!
+            </h1>
+        </nav>
+    </header>
+    <section class="container">
+        @RenderBody()
+    </section>
+    <footer class="container">
+        Copyright 2018 Spotify Chart LLC
+    </footer>
+<script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
